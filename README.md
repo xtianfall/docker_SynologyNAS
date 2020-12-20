@@ -3,7 +3,7 @@
 (How to install Docker on non-intel Synology NAS)
 1. Create a new shared folder in your NAS volume. 
 For example: **/volume1/NASDocker**
-2. Get the server name fom the (for later):
+2. Get the server name (to use in step 10) from:
 	Control Panel > Info Center > Net > Server Name
 
 3. Open a SSH conection to NAS server and get root user:
@@ -19,7 +19,7 @@ tar -xvpzf catdsm-docker.tgz -C /
 rm catdsm-docker.tgz
 ```
 
-5. Change the current PATH to use then docker files.
+5. Change the current PATH to use the docker files.
 ```bash
 PATH=/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
