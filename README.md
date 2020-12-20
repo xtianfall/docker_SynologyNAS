@@ -2,28 +2,28 @@
 (How to install Docker on non-intel Synology NAS)
 1. Create a new shared folder in your NAS volume. 
 For example: **/volume1/NASDocker**
-1. Get the server name fom the (for later):
+2. Get the server name fom the (for later):
 	Control Panel > Info Center > Net > Server Name
 
-2. Open a SSH conection to NAS server and get root user:
+3. Open a SSH conection to NAS server and get root user:
 ```bash
 ssh <USER>@<IP>
 sudo -i
 ```
 
-3. Download docker instalation, decompress and remove the file.
+4. Download docker instalation, decompress and remove the file.
 ```bash
 /bin/wget https://raw.githubusercontent.com/xtianfall/docker_SynologyNAS/master/catdsm-docker.tgz
 tar -xvpzf catdsm-docker.tgz -C /
 rm catdsm-docker.tgz
 ```
 
-4. Change the current PATH to use then docker files.
+5. Change the current PATH to use then docker files.
 ```bash
 PATH=/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
 
-5. Edit the docker daemon file to change the default directory of files.
+6. Edit the docker daemon file to change the default directory of files.
 ```bash
 vi /etc/docker/daemon.json
 ```
@@ -34,12 +34,12 @@ vi /etc/docker/daemon.json
 > Exit from insert mode: esc
 > Save and quit the editor typing: :wq (and enter)
 
-6. Run the docker service:
+7. Run the docker service:
 ```bash
 /opt/etc/init.d/S60dockerd
 ```
 
-7. Run Portainer docker:
+8. Run Portainer docker:
 ```bash
 docker run -d 
   --network=host 
@@ -50,11 +50,11 @@ docker run -d
   portainer/portainer-ce
 ```
 
-8. Enter in `<NAS_IP>:9000` using the browser and create an admin user. 
+9. Enter in `<NAS_IP>:9000` using the browser and create an admin user. 
 Then select Docker and click in connect. 
 This is Portainer.
 
-9. Run HomeBridge docker:
+10. Run HomeBridge docker:
 (replacing NAS (line 8) with your own server name (step 2))
 ```bash
 docker run \
