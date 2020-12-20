@@ -1,4 +1,5 @@
 # docker_SynologyNAS
+## Instalation
 (How to install Docker on non-intel Synology NAS)
 1. Create a new shared folder in your NAS volume. 
 For example: **/volume1/NASDocker**
@@ -90,3 +91,6 @@ Go to: Control Panel > Task Scheduler > Create > Triggered Task > User-defined S
 reboot
 ```
 
+## Plugins
+To add plugins follow this steps:
+[Docker Homebridge Plugins guide](https://github.com/oznu/docker-homebridge#homebridge-plugins)
